@@ -1,0 +1,10 @@
+name: Use-case or evaluation feedback
+description: Share a use case, a documentation suggestion, or evaluation feedback.
+body:
+  - type: textarea
+    id: feedback
+    attributes:
+      label: Feedback
+      description: "For evaluation results, include measurement conditions and the model revision. Share only content you have permission to publish."
+    validations:
+      required: true

@@ -1,0 +1,30 @@
+Themis project publication
+
+GitHub project: foryourhealth111-pixel/Themis
+Model publication: lili55339/Themis-26B-A4B-V1
+
+The original documentation, download utility and publication checks in
+this GitHub repository are provided under the Apache License, Version 2.0.
+The full license text is included in LICENSE.
+
+The linked Themis model distribution contains artifacts derived from:
+  Gemma 4 26B-A4B-it
+  Authors: Google DeepMind
+  Source: https://huggingface.co/google/gemma-4-26B-A4B-it
+  Upstream license: Apache License, Version 2.0
+
+Themis model modifications are published by lili55339. The model weight
+files and release configuration have been modified for Themis and the
+weights are distributed in INT8 form on Hugging Face. Applicable upstream
+copyright and attribution notices remain in force.
+
+Training code, training datasets and internal architecture implementations
+are outside this publication and its license grant.
+
+Third-party content depicted in demonstration media, including screenshots,
+product imagery, names and trademarks, remains subject to the rights of
+its respective owners. This project license grants no additional rights
+to that third-party content. Attribution does not imply endorsement.
+
+This NOTICE provides attribution and modification information and does
+not alter the terms of the Apache License, Version 2.0.

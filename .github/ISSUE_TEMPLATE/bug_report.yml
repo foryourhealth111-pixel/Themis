@@ -1,0 +1,29 @@
+name: Download or documentation issue
+description: Report a reproducible problem with the public release.
+title: "[Issue] "
+body:
+  - type: markdown
+    attributes:
+      value: "Include public, reproducible details. Keep credentials and private inputs out of this report."
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: input
+    id: model-revision
+    attributes:
+      label: Model revision
+      description: "Hugging Face commit or version used."
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps and expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and error message
+      description: "Operating system, Python version, and relevant package versions."

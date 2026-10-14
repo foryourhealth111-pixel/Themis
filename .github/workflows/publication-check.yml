@@ -1,0 +1,16 @@
+name: Public repository checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  publication:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out public files
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Validate public file allowlist and links
+        run: python3 tools/check_publication.py
+      - name: Preview full model download
+        run: python3 examples/download_model.py --dry-run
+      - name: Preview metadata-only download
+        run: python3 examples/download_model.py --metadata-only --dry-run

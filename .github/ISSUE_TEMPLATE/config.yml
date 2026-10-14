@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Model weights and model card
+    url: https://huggingface.co/lili55339/Themis-26B-A4B-V1
+    about: Download the model and read the release notes.
