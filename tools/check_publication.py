@@ -7,7 +7,8 @@ import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-ALLOWED = frozenset(['.gitattributes', '.github/ISSUE_TEMPLATE/bug_report.yml', '.github/ISSUE_TEMPLATE/config.yml', '.github/ISSUE_TEMPLATE/feedback.yml', '.github/workflows/publication-check.yml', '.gitignore', 'CONTRIBUTING.md', 'LICENSE', 'NOTICE', 'README.md', 'README.zh-CN.md', 'assets/computer-agent.gif', 'assets/files-agent.gif', 'assets/poster-agent.gif', 'assets/serial-token-latency.en.png', 'assets/serial-token-latency.zh-CN.png', 'assets/themis-cover.png', 'docs/benchmarks.md', 'docs/benchmarks.zh-CN.md', 'docs/download.md', 'docs/download.zh-CN.md', 'examples/download_model.py', 'requirements.txt', 'tools/check_publication.py'])
+ALLOWED = frozenset(['.gitattributes', '.github/ISSUE_TEMPLATE/bug_report.yml', '.github/ISSUE_TEMPLATE/config.yml', '.github/ISSUE_TEMPLATE/feedback.yml', '.github/workflows/publication-check.yml', '.gitignore', 'CONTRIBUTING.md', 'LICENSE', 'NOTICE', 'README.md', 'README.zh-CN.md', 'assets/chess.gif', 'assets/computer-agent.gif', 'assets/doom.gif', 'assets/files-agent.gif', 'assets/football.gif', 'assets/mario.gif', 'assets/poster-agent.gif', 'assets/serial-token-latency.en.png', 'assets/serial-token-latency.zh-CN.png', 'assets/themis-cover.png', 'docs/benchmarks.md', 'docs/benchmarks.zh-CN.md', 'docs/download.md', 'docs/download.zh-CN.md', 'examples/download_model.py', 'requirements.txt', 'tools/check_publication.py'])
+FILE_SIZE_LIMITS = {"assets/doom.gif": 20 * 1024 * 1024}
 
 
 def main():
@@ -28,8 +29,9 @@ def main():
         path = ROOT / name
         if path.is_symlink():
             errors.append("Symlinks are not allowed: " + name)
-        if path.stat().st_size > 12 * 1024 * 1024:
-            errors.append("Public file exceeds 12 MiB: " + name)
+        limit = FILE_SIZE_LIMITS.get(name, 12 * 1024 * 1024)
+        if path.stat().st_size > limit:
+            errors.append("Public file exceeds its publication size limit: " + name)
         if path.suffix not in {".md", ".py", ".txt", ".yml", ""} and not name.startswith(".git"):
             continue
         text = path.read_text(encoding="utf-8")

@@ -47,7 +47,31 @@ Select specifications, check a budget and quoted price, and save the configurati
 
 ![Themis selecting a computer configuration](assets/computer-agent.gif)
 
-Additional demonstrations are available in the [Hugging Face model card](https://huggingface.co/lili55339/Themis-26B-A4B-V1#4-application-demos). These recordings show the project evaluation setup; this repository provides documentation and download utilities.
+### Chess: middlegame play
+
+![Themis playing a chess middlegame](assets/chess.gif)
+
+Play from a complex middlegame, progressing through exchanges, attacks, and defense.
+
+### Super Mario Bros.: running and jumping
+
+![Themis playing Super Mario Bros.](assets/mario.gif)
+
+Run, jump, cross obstacles, and advance through a classic Mario level.
+
+### DOOM: frontal defense
+
+![Themis in a DOOM frontal-defense scenario](assets/doom.gif)
+
+Aim at incoming enemies and keep firing while responding to successive attacks.
+
+### Five-a-side football: an attacking move
+
+![Themis completing a five-a-side football attack](assets/football.gif)
+
+Complete an attacking sequence with passing, dribbling, and shooting, and score a goal.
+
+These seven recordings show the project evaluation setup. The [Hugging Face model card](https://huggingface.co/lili55339/Themis-26B-A4B-V1#4-application-demos) also includes the complete demonstrations; this repository provides documentation and download utilities.
 
 ## Download the model
 

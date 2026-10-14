@@ -47,7 +47,31 @@ Themis 根据场景、问题或候选动作输出结构化决策及相应概率�
 
 ![Themis 电脑选配演示](assets/computer-agent.gif)
 
-更多演示见 [Hugging Face 模型介绍](https://huggingface.co/lili55339/Themis-26B-A4B-V1#4-application-demos)。录像展示项目评测环境中的效果；本仓库提供介绍文档和下载工具。
+### 国际象棋：中局对弈
+
+![Themis 国际象棋中局对弈演示](assets/chess.gif)
+
+从复杂中局展开对弈，围绕子力交换、进攻与防守推进棋局。
+
+### 超级马里奥：奔跑与跳跃
+
+![Themis 超级马里奥演示](assets/mario.gif)
+
+在经典马里奥关卡中奔跑、跳跃和跨越障碍，沿关卡向前推进。
+
+### DOOM：正面防守
+
+![Themis DOOM 正面防守演示](assets/doom.gif)
+
+在正面防守场景中瞄准来袭敌人并持续开火，应对连续进攻。
+
+### 五人制足球：进攻配合
+
+![Themis 五人制足球进攻演示](assets/football.gif)
+
+通过传球、带球与射门完成一次进攻配合，并取得进球。
+
+以上七个演示展示项目评测环境中的效果。[Hugging Face 模型介绍](https://huggingface.co/lili55339/Themis-26B-A4B-V1#4-application-demos)同样包含完整演示；本仓库提供介绍文档和下载工具。
 
 ## 下载模型
 
