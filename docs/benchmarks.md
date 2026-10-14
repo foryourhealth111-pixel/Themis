@@ -4,6 +4,10 @@
 
 Snapshot: October 14, 2026. These results are reported by the Themis project from completed runs and saved public baseline snapshots.
 
+Comparison positions are limited to the benchmark versions and reference models shown: 12 selected models for Heaven, 11 public fixture models plus Themis for Decision Index 0.3, and 21 saved reference models plus Themis for QUB. Themis results come from local evaluations and have not been registered as official leaderboard entries. Overlap with public evaluation data is recorded in prior training and experiments. Values are displayed to two decimal places; rankings and differences use the underlying unrounded scores.
+
+![Themis benchmark scores and comparison positions](../assets/benchmarks/00-benchmark-overview.png)
+
 ## 2. Public evaluation results
 
 | Evaluation | Themis INT8 | Coverage and measurement |
@@ -16,14 +20,22 @@ Heaven measures correctness on public tasks. Decision Index uses random-baseline
 
 ### 2.1 Heaven: the same 231 public questions
 
-| Model / mode | Correct | Accuracy |
-| --- | ---: | ---: |
-| **Themis 26B-A4B V1 INT8** | **215 / 231** | **93.07%** |
-| OpenJev (thinking, BF16) | 205 / 231 | 88.74% |
-| djev (thinking) | 202 / 231 | 87.45% |
-| reflex-27b (Qwen3.8-27B) | 201 / 231 | 87.01% |
-| Jev 1.13.0 (TypeSafe AI) | 200 / 231 | 86.58% |
-| openjev-sglang (Qwen3.6-35B-A3B, SGLang) | 197 / 231 | 85.28% |
+![Heaven ranking of 12 selected models on the same 231 tasks](../assets/benchmarks/01-heaven.png)
+
+| Position | Model / mode | Correct | Accuracy |
+| ---: | --- | ---: | ---: |
+| 1 | **Themis 26B-A4B V1 INT8** | 215 / 231 | **93.07%** |
+| 2 | OpenJev (thinking · BF16) | 205 / 231 | 88.74% |
+| 3 | djev (thinking) | 202 / 231 | 87.45% |
+| 4 | reflex-27b (Qwen3.8-27B) | 201 / 231 | 87.01% |
+| 5 | Jev 1.13.0 (TypeSafe AI) | 200 / 231 | 86.58% |
+| 5 | SimpleJev (Qwen3.8-27B) | 200 / 231 | 86.58% |
+| 7 | LitJev (Qwen3.8-27B) | 199 / 231 | 86.15% |
+| 8 | Winnow-12B (Q8) | 198 / 231 | 85.71% |
+| 9 | openjev-sglang (Qwen3.6-35B-A3B · SGLang) | 197 / 231 | 85.28% |
+| 9 | classifier.dev (fast tier) | 197 / 231 | 85.28% |
+| 11 | djev (diffusion-gemma) | 194 / 231 | 83.98% |
+| 12 | decider-35b-a3b (Mapika) | 192 / 231 | 83.12% |
 
 On this comparison using identical questions, Themis INT8 answers **15 more questions** correctly than Jev 1.13.0, an advantage of **6.49 percentage points**. It exceeds OpenJev thinking by **4.33 percentage points**. The comparison uses the saved 231-question public snapshot and retains each model's execution mode.
 
@@ -31,19 +43,26 @@ Themis INT8's Heaven macro accuracy is **92.00%**, ECE is **0.02816**, mean Brie
 
 ### 2.2 Decision Index 0.3: public index
 
-| Model | Public index | Themis INT8 minus baseline |
-| --- | ---: | ---: |
-| **Themis 26B-A4B V1 INT8** | **70.46** | — |
-| Torchcast Decision 27B | 65.10 | +5.36 |
-| Perplexity Decider v1.1 (27B) | 62.25 | +8.21 |
-| Cloudflare clef | 61.71 | +8.75 |
-| Quyet-1.0-Large | 60.79 | +9.67 |
-| Fastino GLiDE no-thinking (28B) | 59.06 | +11.40 |
-| Jev | 57.96 | +12.50 |
-| Kev 27B | 56.69 | +13.77 |
-| JPT-9B | 46.96 | +23.50 |
+![Decision Index 0.3 public-index ranking of 12 compared models](../assets/benchmarks/02-decision-index-0.3.png)
+
+| Position | Model / mode | Public index | Themis INT8 minus baseline |
+| ---: | --- | ---: | ---: |
+| 1 | **Themis 26B-A4B V1 INT8** | **70.46** | — |
+| 2 | Torchcast Decision 27B | 65.10 | +5.36 |
+| 3 | Perplexity Decider v1.1 (27B) | 62.25 | +8.21 |
+| 4 | Cloudflare clef | 61.71 | +8.75 |
+| 5 | Quyet-1.0-Large | 60.79 | +9.67 |
+| 6 | Fastino GLiDE (no-thinking · 28B) | 59.06 | +11.40 |
+| 7 | Jev | 57.96 | +12.50 |
+| 8 | Kev 27B | 56.69 | +13.77 |
+| 9 | JPT-9B | 46.96 | +23.50 |
+| 10 | JPT-0.8B | 19.37 | +51.09 |
+| 11 | Lavoir | 8.85 | +61.61 |
+| 12 | Verdict | 1.86 | +68.60 |
 
 Themis INT8's public index exceeds Jev by **12.50 points** and Torchcast Decision 27B by **5.36 points**. This table covers the public portion of Decision Index 0.3. The leaderboard's Full score also includes private evaluations held by its maintainers.
+
+![Themis and Jev compared across five Decision Index domains](../assets/benchmarks/04-decision-index-domains.png)
 
 | Domain | Themis INT8 | Jev | Difference |
 | --- | ---: | ---: | ---: |
@@ -57,16 +76,32 @@ Coverage is 100% in all five domains. Jev's domain scores were recalculated from
 
 ### 2.3 QUB: the full jevbench-240 suite
 
-| Model | Full-suite score / 100 | Themis INT8 minus baseline |
-| --- | ---: | ---: |
-| Open-Jev-9B | 83.90 | -1.75 |
-| **Themis 26B-A4B V1 INT8** | **82.15** | — |
-| JevAny-Gemma-4B (pointer) | 79.03 | +3.12 |
-| JevAny-Qwen-4B (direct token) | 78.60 | +3.55 |
-| JevAny-Qwen-4B (pointer) | 78.27 | +3.88 |
-| decider-4b v2.1 | 77.27 | +4.88 |
-| TinyJev-4B | 75.18 | +6.97 |
-| OneJev-4B | 72.91 | +9.24 |
+![QUB full-suite ranking of 22 compared models](../assets/benchmarks/03-qub-full.png)
+
+| Position | Model / mode | Full-suite score / 100 | Themis INT8 minus baseline |
+| ---: | --- | ---: | ---: |
+| 1 | Open-Jev-9B | 83.90 | -1.75 |
+| 2 | **Themis 26B-A4B V1 INT8** | **82.15** | — |
+| 3 | JevAny-Gemma-4B (pointer) | 79.03 | +3.12 |
+| 4 | JevAny-Qwen-4B (direct token) | 78.60 | +3.55 |
+| 5 | JevAny-Qwen-4B (pointer) | 78.27 | +3.88 |
+| 6 | decider-4b v2.1 | 77.27 | +4.88 |
+| 7 | Jebadiah 9B v2 | 76.56 | +5.59 |
+| 8 | Von 1.3 | 75.21 | +6.94 |
+| 9 | TinyJev-4B | 75.18 | +6.97 |
+| 10 | OneJev-4B | 72.91 | +9.24 |
+| 11 | RSI-Jev v3.0 2B | 72.10 | +10.05 |
+| 12 | JevK5 v0.3 | 72.05 | +10.10 |
+| 13 | decider-2b v10 | 71.32 | +10.84 |
+| 14 | Kev-4B | 71.20 | +10.95 |
+| 15 | jevhome-E | 68.98 | +13.17 |
+| 16 | Bespoke-Nimble-9B | 67.87 | +14.28 |
+| 17 | CLM v0.1 | 66.53 | +15.63 |
+| 18 | jevhome-ettin-1b | 64.79 | +17.36 |
+| 19 | Laya (typed-decisions) | 63.10 | +19.05 |
+| 20 | OpenThai-SystemOne | 62.11 | +20.04 |
+| 21 | Verdict 1.4 | 59.69 | +22.47 |
+| 22 | Laya (english) | 57.64 | +24.52 |
 
 The comparison uses saved full-suite results. Open-Jev-9B scores **1.75 points** above Themis INT8; Themis INT8 scores above the remaining models in the table. This result has not been registered as an official leaderboard submission. A corresponding TypeSafe Jev 1.13.0 result is unavailable under this measurement convention.
 

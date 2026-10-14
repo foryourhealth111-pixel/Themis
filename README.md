@@ -16,16 +16,50 @@ The current model release is **Themis-26B-A4B-V1**, based on **Google DeepMind's
 
 Results below are from the project's completed evaluation runs, recorded on **October 14, 2026**. Each benchmark uses its own measurement convention.
 
-| Evaluation | Result | Scope |
-| --- | ---: | --- |
-| Heaven | **93.07%** | 215 / 231 correct on the same public question set |
-| Decision Index 0.3 | **70.46** | Public, baseline-corrected index; 37 question sets across five domains |
-| QUB / jevbench-240 | **82.15 / 100** | Full-suite consistency score over 240 cases |
-| Heaven serial latency | **43.54 ms P50 · 131.78 ms P95** | 231 single-question requests on one RTX PRO 6000 Blackwell Server Edition |
+| Evaluation | Result | Position in this comparison | Scope |
+| --- | ---: | --- | --- |
+| Heaven | **93.07%** | **1 / 12 selected models** | 215 / 231 correct on the same public question set |
+| Decision Index 0.3 | **70.46** | **1 / 12 in the fixture comparison** | Public, baseline-corrected index; 37 question sets across five domains |
+| QUB / jevbench-240 | **82.15 / 100** | **2 / 22 in the saved snapshot** | Full-suite consistency score over 240 cases |
+| Heaven serial latency | **43.54 ms P50 · 131.78 ms P95** | — | 231 single-question requests on one RTX PRO 6000 Blackwell Server Edition |
 
 Latency measures same-machine HTTP request submission through receipt of the complete response. Model loading and service warmup are excluded; the first measured request is included. These Heaven inputs range from 91 to 3,869 tokens. Hardware, input length and serving conditions affect latency.
 
 The [full evaluation notes](docs/benchmarks.md) include comparison tables, longer-input measurements, and workflow results where Themis trails the listed Jev baseline. The QUB result is a project-run evaluation and has not been registered as an official leaderboard submission.
+
+## Benchmark rankings
+
+These figures use the **October 14, 2026** evaluation snapshot. Positions apply to the models and benchmark versions shown. Themis results come from local project evaluations and have not been registered as official leaderboard entries. Overlap with public evaluation data is recorded in prior training and experiments.
+
+### Three-benchmark overview
+
+![Themis scores and comparison positions across Heaven, Decision Index 0.3, and QUB](assets/benchmarks/00-benchmark-overview.png)
+
+### Heaven: 12 selected models on the same 231 tasks
+
+**93.07% accuracy**, with 215 correct answers. This is **6.49 percentage points** above Jev 1.13.0 and **4.33 percentage points** above OpenJev in thinking mode, using reference artifact v1.3.0.
+
+![Heaven accuracy ranking of 12 selected decision models](assets/benchmarks/01-heaven.png)
+
+### Decision Index 0.3: all 11 public fixture models plus Themis
+
+**70.46 public index**, exceeding Torchcast Decision 27B by **5.36 points** and Jev by **12.50 points**. The comparison uses the public portion of the benchmark; the maintainers' Full score also includes private evaluations.
+
+![Decision Index 0.3 public-index ranking of 12 compared models](assets/benchmarks/02-decision-index-0.3.png)
+
+### QUB / jevbench-240: all 21 saved reference models plus Themis
+
+**82.15 / 100**, placing second in this 22-model snapshot. Open-Jev-9B scores **83.90**. Every bar uses the complete 240-case suite.
+
+![QUB full-suite consistency ranking of 22 compared models](assets/benchmarks/03-qub-full.png)
+
+### Decision Index 0.3: five-domain comparison
+
+Themis scores higher than the saved Jev baseline in all five domains, including **85.86** in tools and automation. Domain scores use the benchmark's native weights.
+
+![Themis and Jev compared across the five Decision Index domains](assets/benchmarks/04-decision-index-domains.png)
+
+See the [complete score tables and measurement notes](docs/benchmarks.md) for every model shown, domain scores, consistency dimensions, latency, and supplementary workflow evaluations.
 
 ## See it in action
 
