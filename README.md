@@ -21,11 +21,8 @@ Results below are from the project's completed evaluation runs, recorded on **Oc
 | Heaven | **93.07%** | **1 / 12 selected models** | 215 / 231 correct on the same public question set |
 | Decision Index 0.3 | **70.46** | **1 / 12 in the fixture comparison** | Public, baseline-corrected index; 37 question sets across five domains |
 | QUB / jevbench-240 | **82.15 / 100** | **2 / 22 in the saved snapshot** | Full-suite consistency score over 240 cases |
-| Heaven serial latency | **43.54 ms P50 · 131.78 ms P95** | — | 231 single-question requests on one RTX PRO 6000 Blackwell Server Edition |
 
-Latency measures same-machine HTTP request submission through receipt of the complete response. Model loading and service warmup are excluded; the first measured request is included. These Heaven inputs range from 91 to 3,869 tokens. Hardware, input length and serving conditions affect latency.
-
-The [full evaluation notes](docs/benchmarks.md) include comparison tables, longer-input measurements, and workflow results where Themis trails the listed Jev baseline. The QUB result is a project-run evaluation and has not been registered as an official leaderboard submission.
+The [full evaluation notes](docs/benchmarks.md) include comparison tables and workflow results where Themis trails the listed Jev baseline. The QUB result is a project-run evaluation and has not been registered as an official leaderboard submission.
 
 ## Benchmark rankings
 
@@ -59,7 +56,7 @@ Themis scores higher than the saved Jev baseline in all five domains, including 
 
 ![Themis and Jev compared across the five Decision Index domains](assets/benchmarks/04-decision-index-domains.png)
 
-See the [complete score tables and measurement notes](docs/benchmarks.md) for every model shown, domain scores, consistency dimensions, latency, and supplementary workflow evaluations.
+See the [complete score tables and measurement notes](docs/benchmarks.md) for every model shown, domain scores, consistency dimensions and supplementary workflow evaluations.
 
 ## See it in action
 
@@ -105,7 +102,7 @@ Aim at incoming enemies and keep firing while responding to successive attacks.
 
 Complete an attacking sequence with passing, dribbling, and shooting, and score a goal.
 
-These seven recordings show the project evaluation setup. The [Hugging Face model card](https://huggingface.co/lili55339/Themis-26B-A4B-V1#4-application-demos) also includes the complete demonstrations; this repository provides documentation and download utilities.
+These seven recordings show the project evaluation setup. The [Hugging Face model card](https://huggingface.co/lili55339/Themis-26B-A4B-V1#3-application-demos) also includes the complete demonstrations; this repository provides documentation and download utilities.
 
 ## Download the model
 
@@ -117,7 +114,7 @@ python examples/download_model.py --dry-run
 python examples/download_model.py --local-dir ./models/Themis-26B-A4B-V1
 ```
 
-The default revision is `d72b3f8d2ed16f20e9270c29d012e820b93fb31a`. The 31 weight shards occupy about **27.69 GB** in decimal units; allow additional space for the tokenizer and download metadata. The helper uses an explicit file list and supports resuming downloads through `huggingface_hub`.
+The default revision is `4dffa8ec99f3db6683f784b60c73846dc1f136b2`. The 31 weight shards occupy about **27.69 GB** in decimal units; allow additional space for the tokenizer and download metadata. The helper uses an explicit file list and supports resuming downloads through `huggingface_hub`.
 
 See [download options](docs/download.md) for a small metadata-only download and CLI instructions.
 

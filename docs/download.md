@@ -10,7 +10,7 @@ Use Python 3.10 or later and install `huggingface_hub`:
 pip install -r requirements.txt
 ```
 
-The public model is [lili55339/Themis-26B-A4B-V1](https://huggingface.co/lili55339/Themis-26B-A4B-V1). Downloads default to the verified revision `d72b3f8d2ed16f20e9270c29d012e820b93fb31a`. The download helper uses the public Hub; no token is required for a publicly accessible model.
+The public model is [lili55339/Themis-26B-A4B-V1](https://huggingface.co/lili55339/Themis-26B-A4B-V1). Downloads default to the verified revision `4dffa8ec99f3db6683f784b60c73846dc1f136b2`. The download helper uses the public Hub; no token is required for a publicly accessible model.
 
 ## Preview and download
 
@@ -33,7 +33,7 @@ Change concurrency or select an explicit revision:
 
 ```bash
 python examples/download_model.py --max-workers 8 --local-dir ./models/Themis-26B-A4B-V1
-python examples/download_model.py --revision d72b3f8d2ed16f20e9270c29d012e820b93fb31a --dry-run
+python examples/download_model.py --revision 4dffa8ec99f3db6683f784b60c73846dc1f136b2 --dry-run
 ```
 
 The full weight payload is 27,694,122,564 bytes. Reserve at least 30 GB of free space for the model files and extra space for local cache behavior. Re-running the same download reuses files through Hugging Face's download metadata.
@@ -43,7 +43,7 @@ The full weight payload is 27,694,122,564 bytes. Reserve at least 30 GB of free 
 The official CLI provides a direct alternative:
 
 ```bash
-hf download lili55339/Themis-26B-A4B-V1 --revision d72b3f8d2ed16f20e9270c29d012e820b93fb31a --local-dir ./models/Themis-26B-A4B-V1
+hf download lili55339/Themis-26B-A4B-V1 --revision 4dffa8ec99f3db6683f784b60c73846dc1f136b2 --local-dir ./models/Themis-26B-A4B-V1
 ```
 
 This CLI command downloads the model repository, including presentation assets. See the [official download documentation](https://huggingface.co/docs/huggingface_hub/guides/download).

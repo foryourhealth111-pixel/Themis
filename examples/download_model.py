@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 REPO_ID = "lili55339/Themis-26B-A4B-V1"
-DEFAULT_REVISION = "d72b3f8d2ed16f20e9270c29d012e820b93fb31a"
+DEFAULT_REVISION = "4dffa8ec99f3db6683f784b60c73846dc1f136b2"
 METADATA_FILES = (
     "README.md", "README.zh-CN.md", "LICENSE", "NOTICE", "config.json",
     "model.safetensors.index.json", "tokenizer/tokenizer_config.json",

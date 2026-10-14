@@ -21,11 +21,8 @@ Themis 根据场景、问题或候选动作输出结构化决策及相应概率�
 | Heaven | **93.07%** | **所选 12 个模型中第 1** | 同一组公开题，答对 215 / 231 道 |
 | Decision Index 0.3 | **70.46** | **复现对照的 12 个模型中第 1** | 公开校正指数；37 个题集，覆盖五个领域 |
 | QUB / jevbench-240 | **82.15 / 100** | **已保存快照的 22 个模型中第 2** | 240 个案例的完整套件一致性分数 |
-| Heaven 串行延迟 | **P50 43.54 ms · P95 131.78 ms** | — | 单张 RTX PRO 6000 Blackwell Server Edition，231 次单问题请求 |
 
-延迟从同机 HTTP 请求提交开始，计算到完整响应接收完成；模型加载和服务预热在计时前完成，首个正式请求纳入统计。这组 Heaven 输入为 91–3,869 tokens。硬件、输入长度和服务条件会影响延迟。
-
-[完整评测说明](docs/benchmarks.zh-CN.md)包含对照表、长输入测试，以及 Themis 低于所列 Jev 基线的工作流结果。QUB 结果来自项目自行运行的评测，尚未登记为官方榜单提交。
+[完整评测说明](docs/benchmarks.zh-CN.md)包含对照表，以及 Themis 低于所列 Jev 基线的工作流结果。QUB 结果来自项目自行运行的评测，尚未登记为官方榜单提交。
 
 ## 基准测试排名
 
@@ -59,7 +56,7 @@ Themis 在五个领域的得分均高于已保存的 Jev 基线，其中工具�
 
 ![Themis 与 Jev 在 Decision Index 五大领域的得分对比](assets/benchmarks/04-decision-index-domains.png)
 
-[完整分数表与测量说明](docs/benchmarks.zh-CN.md)提供图中全部模型的具体分数、领域表现、一致性维度、延迟及补充工作流结果。
+[完整分数表与测量说明](docs/benchmarks.zh-CN.md)提供图中全部模型的具体分数、领域表现、一致性维度及补充工作流结果。
 
 ## 应用演示
 
@@ -105,7 +102,7 @@ Themis 在五个领域的得分均高于已保存的 Jev 基线，其中工具�
 
 通过传球、带球与射门完成一次进攻配合，并取得进球。
 
-以上七个演示展示项目评测环境中的效果。[Hugging Face 模型介绍](https://huggingface.co/lili55339/Themis-26B-A4B-V1#4-application-demos)同样包含完整演示；本仓库提供介绍文档和下载工具。
+以上七个演示展示项目评测环境中的效果。[Hugging Face 模型介绍](https://huggingface.co/lili55339/Themis-26B-A4B-V1#3-application-demos)同样包含完整演示；本仓库提供介绍文档和下载工具。
 
 ## 下载模型
 
@@ -117,7 +114,7 @@ python examples/download_model.py --dry-run
 python examples/download_model.py --local-dir ./models/Themis-26B-A4B-V1
 ```
 
-默认固定版本为 `d72b3f8d2ed16f20e9270c29d012e820b93fb31a`。31 份权重分片约占 **27.69 GB**（十进制单位），请额外预留分词器和下载元数据空间。脚本使用明确的文件清单，并通过 `huggingface_hub` 支持恢复下载。
+默认固定版本为 `4dffa8ec99f3db6683f784b60c73846dc1f136b2`。31 份权重分片约占 **27.69 GB**（十进制单位），请额外预留分词器和下载元数据空间。脚本使用明确的文件清单，并通过 `huggingface_hub` 支持恢复下载。
 
 小体积的元数据下载、命令行方式及其他选项见[下载指南](docs/download.zh-CN.md)。
 

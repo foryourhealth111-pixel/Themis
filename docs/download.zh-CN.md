@@ -10,7 +10,7 @@
 pip install -r requirements.txt
 ```
 
-公开模型地址为 [lili55339/Themis-26B-A4B-V1](https://huggingface.co/lili55339/Themis-26B-A4B-V1)。脚本默认下载已核验的固定版本 `d72b3f8d2ed16f20e9270c29d012e820b93fb31a`。公开可访问的模型可直接通过 Hub 下载。
+公开模型地址为 [lili55339/Themis-26B-A4B-V1](https://huggingface.co/lili55339/Themis-26B-A4B-V1)。脚本默认下载已核验的固定版本 `4dffa8ec99f3db6683f784b60c73846dc1f136b2`。公开可访问的模型可直接通过 Hub 下载。
 
 ## 查看计划与下载
 
@@ -33,7 +33,7 @@ python examples/download_model.py --metadata-only --local-dir ./model-metadata
 
 ```bash
 python examples/download_model.py --max-workers 8 --local-dir ./models/Themis-26B-A4B-V1
-python examples/download_model.py --revision d72b3f8d2ed16f20e9270c29d012e820b93fb31a --dry-run
+python examples/download_model.py --revision 4dffa8ec99f3db6683f784b60c73846dc1f136b2 --dry-run
 ```
 
 权重总大小为 27,694,122,564 字节。建议为模型文件至少预留 30 GB，并为本地缓存额外预留空间。重复执行相同下载会通过 Hugging Face 下载元数据复用已有文件。
@@ -43,7 +43,7 @@ python examples/download_model.py --revision d72b3f8d2ed16f20e9270c29d012e820b93
 也可以使用官方 CLI：
 
 ```bash
-hf download lili55339/Themis-26B-A4B-V1 --revision d72b3f8d2ed16f20e9270c29d012e820b93fb31a --local-dir ./models/Themis-26B-A4B-V1
+hf download lili55339/Themis-26B-A4B-V1 --revision 4dffa8ec99f3db6683f784b60c73846dc1f136b2 --local-dir ./models/Themis-26B-A4B-V1
 ```
 
 该命令下载模型仓库及其中的展示素材。详细行为见 [Hugging Face 下载文档](https://huggingface.co/docs/huggingface_hub/guides/download)。
